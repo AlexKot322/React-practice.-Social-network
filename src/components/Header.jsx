@@ -1,11 +1,12 @@
 import React from "react";
+import header from './header.module.css'
 
 const Header = () => {
     return (
-        <header className='header'>
+        <header className={header.header}>
             <h1>My-social</h1>
-            <div className='headerLinks'>
-                <ul className='home'>
+            <div className={header.headerLinks}>
+                <ul className={header.home}>
                     Home
             <div>
                         <li><a href='#'>Войти</a></li>
@@ -13,7 +14,7 @@ const Header = () => {
                         <li><a href='#'>Новости</a></li>
                     </div>
                 </ul>
-                <ul className='settings'>
+                <ul className={header.settings}>
                     Настройки
             <div>
                         <li><a href='#'>Настройки профиля</a></li>
@@ -24,7 +25,7 @@ const Header = () => {
                         <li><a href='#'>Язык</a></li>
                     </div>
                 </ul>
-                <ul className='more'>
+                <ul className={header.more}>
                     Дополнительно
                     <div>
                     <li><a href='#'>Ошибки</a></li>
