@@ -1,10 +1,6 @@
 import React from "react";
 import classes from './Nav.module.css';
 
-// let classes = {
-//   'nav': '',
-//   'item': ''
-// }
 
 const Nav = () => {
     return (
