@@ -6,3 +6,28 @@
     max-width: 70px;
     border-radius: 50%;
 }
+
+a {
+    text-decoration: none;
+}
+
+.like {
+    margin-left: 30px;
+    font-weight: bold;
+    position: relative;
+    color: red;
+    text-decoration: none;
+}
+
+.like::before {
+    content: " ";
+    background: url("http://cdn.onlinewebfonts.com/svg/img_165452.png");
+    background-position: center;
+    background-size: cover;
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    position: absolute;
+    top: 18%;
+    left: -65%;
+}

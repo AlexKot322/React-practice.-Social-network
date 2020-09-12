@@ -11,11 +11,8 @@ const MyPosts = () => {
             <button>Remove</button>
           </div>
           <div className={Myposts.posts}>
-            <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
+            <Post message='Who you are?' sum='600'/>
+            <Post message='Who you bitch' sum='122'/>
           </div>
         </div>
       )
