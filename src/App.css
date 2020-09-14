@@ -16,3 +16,8 @@ a {
     margin: 0 auto;
     padding: 0 1em;
 }
+
+.app-wrapper-content {
+    grid-area: c;
+    background-color: palevioletred;
+}
