@@ -6,7 +6,6 @@ const Post = (props) => {
 
     <div className={onePost.item}>
       <img src="https://klike.net/uploads/posts/2019-03/1551511784_4.jpg" />
-              {props.message}
       <div>
         <span>Like</span>
         <a href="" className={onePost.like}>
