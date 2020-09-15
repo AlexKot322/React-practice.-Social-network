@@ -22,7 +22,10 @@ const Dialogs = (props) => {
                 <div className={s.dialog}>
                     Кекыч
                 </div> */}
-                <Person ava="https://pbs.twimg.com/profile_images/378800000619398984/7bd4096c5e612dea658f2686d1bee6df.jpeg" name="Александр"/>
+                <Person  name="Александр"/>
+                <Person  name="Марти"/>
+                <Person  name="Сергей"/>
+                <Person  name="Бибыч"/>
             </div>
             <div className={s.messages}>
                 <div className={s.message}>Даров</div>
