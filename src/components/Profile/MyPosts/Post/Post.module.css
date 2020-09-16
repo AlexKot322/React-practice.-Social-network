@@ -1,33 +1,95 @@
-.item {
-    color: green;
+span {
+    margin-left: 0.2em;
 }
 
-.item img {
+.item {
+    color: green;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3em;
+    max-width: 500px;
+    width: 100%;
+}
+
+.avatar {
+    display: flex;
+    align-items: flex-start;
+}
+
+.avatarRight {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin-left: 0.4em;
+}
+
+.avatarRight span {
+    margin-top: 1.3em;
+}
+
+.avatarImg {
     max-width: 70px;
     border-radius: 50%;
 }
 
+.avatarName {}
+
+.postImg {
+    max-width: 500px;
+    margin-top: 0.4em;
+}
+
+.postNav {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
 a {
     text-decoration: none;
+    display: inline-block;
 }
 
 .like {
     margin-left: 30px;
     font-weight: bold;
-    position: relative;
     color: red;
     text-decoration: none;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
 }
 
-.like::before {
-    content: " ";
-    background: url("http://cdn.onlinewebfonts.com/svg/img_165452.png");
-    background-position: center;
-    background-size: cover;
-    width: 13px;
-    height: 13px;
-    display: inline-block;
-    position: absolute;
-    top: 18%;
-    left: -65%;
+.look {
+    margin-left: 30px;
+    font-weight: bold;
+    color: red;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    align-items: center;
+}
+
+.look img,
+.like img {
+    max-width: 20px;
+}
+
+.postNav_delete {
+    max-width: 30px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.postNav_delete img {
+    max-width: 10px;
 }
