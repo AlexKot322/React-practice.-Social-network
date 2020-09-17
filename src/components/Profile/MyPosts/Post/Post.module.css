@@ -77,19 +77,10 @@ a {
     align-items: center;
 }
 
-.look img,
-.like img {
-    max-width: 20px;
-}
-
 .postNav_delete {
     max-width: 30px;
     cursor: pointer;
     background-color: transparent;
     border: none;
     outline: none;
-}
-
-.postNav_delete img {
-    max-width: 10px;
 }
