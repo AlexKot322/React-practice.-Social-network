@@ -9,16 +9,12 @@ import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import { Route, BrowserRouter } from "react-router-dom";
 
-let SomeComponent = () => < Dialogs / >
 
-    const App = () => {
 
-            let posts = [
-                { id: 1, name: 'Александр Котовсков', countLike: 333, countLook: 222, datePublick: "13 августа" },
-                { id: 2, name: 'Лул Кекович', countLike: 11, countLook: 22, datePublick: "12 сентября" }
-            ]
+let SomeComponent = () => < Dialogs / > ;
 
-            return ( <
+const App = (props) => {
+        return ( <
                 BrowserRouter >
                 <
                 div className = "app-wrapper" >
@@ -30,29 +26,32 @@ let SomeComponent = () => < Dialogs / >
                 div className = "app-wrapper-content" >
                 <
                 Route path = "/Dialogs"
-                render = { SomeComponent }
-                /> <
-                Route path = "/Profile"
                 render = {
-                    () => < Profile posts = { posts }
-                    /> } / >
+                    () => < Dialogs dialogs = { props.dialogs }
+                    messages = { props.messages }
+                    />} / >
                     <
-                    Route path = "/News"
+                    Route path = "/Profile"
                     render = {
-                        () => < News / > }
-                    /> <
-                    Route path = "/Music"
-                    render = {
-                        () => < Music / > }
-                    /> <
-                    Route path = "/Settings"
-                    render = {
-                        () => < Settings / > }
-                    /> <
-                    /div> <
-                    /div> <
-                    /BrowserRouter>
-                );
-            };
+                        () => < Profile posts = { props.posts }
+                        />} / >
+                        <
+                        Route path = "/News"
+                        render = {
+                            () => < News / > }
+                        /> <
+                        Route path = "/Music"
+                        render = {
+                            () => < Music / > }
+                        /> <
+                        Route path = "/Settings"
+                        render = {
+                            () => < Settings / > }
+                        /> <
+                        /div> <
+                        /div> <
+                        /BrowserRouter>
+                    );
+                };
 
-            export default App;
+                export default App;
