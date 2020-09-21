@@ -11,15 +11,30 @@
     color: gold;
 }
 
-.dialog {}
-
-.messages {
-    padding: 10px;
+.dialogCard {
+    max-width: 200px;
+    background-color: transparent;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
 }
 
-.message {
-    border: 1px solid #000;
-    border-radius: 0.7em;
-    text-align: center;
-    padding: 0.3em;
+.dialogCard:nth-child(even) {
+    display: flex;
+    align-items: flex-end;
+}
+
+.dialogCard:nth-child(odd) {
+    display: flex;
+    align-items: flex-start;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper:nth-child(even) {
+    display: flex;
+    align-items: flex-end;
 }

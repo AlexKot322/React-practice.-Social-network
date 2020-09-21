@@ -1,10 +1,16 @@
 import React from "react";
-import s from './../Dialogs.module.css';
+import message from './../Message.module.css';
 
 
 const Message = (props) => {
     return (
-        <div className={s.message}>{props.message}</div>
+            <div className={message.dialogCard}>
+                <div className={message.head}></div>
+                <div className={message.wrapper}>
+                    <img src="https://i.ucrazy.ru/files/i/2013.3.31/1364704553_z26.jpg"></img>
+                    <div className={message.message}>{props.message}</div>
+                </div>
+            </div>
     )
 }
 

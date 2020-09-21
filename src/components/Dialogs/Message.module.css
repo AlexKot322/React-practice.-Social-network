@@ -1,0 +1,38 @@
+.message {
+    border: 1px solid #000;
+    border-radius: 0.7em;
+    padding: 0.3em;
+    display: flex;
+}
+
+.dialogCard {
+    max-width: 200px;
+    background-color: transparent;
+    font-size: 12px;
+}
+
+.dialogCard:nth-child(even) {
+    display: flex;
+    align-items: flex-end;
+}
+
+.wrapper {
+    display: flex;
+    /* flex-direction: column; */
+}
+
+.wrapper img {
+    width: 40px;
+}
+
+.wrapper:nth-child(even) {
+    display: flex;
+    align-items: flex-end;
+    align-content: flex-start;
+}
+
+.dialogCard:first-child .head {
+    margin-bottom: 1em;
+    background-color: #088dcd;
+    height: 3em;
+}
