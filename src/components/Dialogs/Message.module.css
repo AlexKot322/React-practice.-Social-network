@@ -1,38 +1,45 @@
 .message {
     border: 1px solid #000;
-    border-radius: 0.7em;
-    padding: 0.3em;
+    border-radius: 0.3em;
+    border: none;
+    padding: 0.4em;
     display: flex;
 }
 
 .dialogCard {
-    max-width: 200px;
+    width: 100%;
     background-color: transparent;
     font-size: 12px;
+    padding: 0 10px 10px 10px;
 }
 
 .dialogCard:nth-child(even) {
     display: flex;
-    align-items: flex-end;
+}
+
+.dialogCard:nth-child(even) .wrapper .kuk .message {
+    background-color: #fbfbfb;
+    box-shadow: -5px 6px 3px -1px rgba(34, 60, 80, 0.2);
+}
+
+.dialogCard:nth-child(odd) .wrapper .kuk .message {
+    background-color: #e0f4bf;
+    box-shadow: 5px 6px 3px -1px rgba(34, 60, 80, 0.2);
 }
 
 .wrapper {
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
 }
 
 .wrapper img {
-    width: 40px;
+    width: 30px;
+    border-radius: 50%;
+    margin-left: 0.5em;
+    box-shadow: 2px 4px 2px -1px rgba(34, 60, 80, 0.2)
 }
 
-.wrapper:nth-child(even) {
+.kuk {
     display: flex;
-    align-items: flex-end;
-    align-content: flex-start;
-}
-
-.dialogCard:first-child .head {
-    margin-bottom: 1em;
-    background-color: #088dcd;
-    height: 3em;
+    flex-direction: row-reverse;
 }

@@ -2,7 +2,6 @@ import React from "react";
 import s from './Dialogs.module.css'
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-import message from './Message.module.css';
 
 
 
@@ -19,8 +18,13 @@ const Dialogs = (props) => {
 
                 {dialogsElements}
             </div>
-            <div className={message.messages}>
+            <div className={s.messages}>
+                <div className={s.head}></div>
                 {messagesElements}
+                <div className={s.footer}>
+                    <textarea value="напишите сообщение"></textarea>
+                    <button></button>
+                </div>
             </div>
         </div>
     )
