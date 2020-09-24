@@ -9,48 +9,34 @@ import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import { Route, BrowserRouter } from "react-router-dom";
 
-let SomeComponent = () => < Dialogs / > ;
+let SomeComponent = () => <Dialogs />;
 
 const App = (props) => {
-        return ( <
-                BrowserRouter >
-                <
-                div className = "app-wrapper" >
-                <
-                Header / >
-                <
-                Nav / >
-                <
-                div className = "app-wrapper-content" >
-                <
-                Route path = "/Dialogs"
-                render = {
-                    () => < Dialogs state = { props.state.dialogsPage }
-                    />} / >
-                    <
-                    Route
-                    path = "/Profile"
-                    render = {
-                        () => < Profile state = { props.state.profilePage }
-                        />} /
-                        >
-                        <
-                        Route path = "/News"
-                        render = {
-                            () => < News / > }
-                        /> <
-                        Route path = "/Music"
-                        render = {
-                            () => < Music / > }
-                        /> <
-                        Route path = "/Settings"
-                        render = {
-                            () => < Settings / > }
-                        /> <
-                        /div> <
-                        /div> <
-                        /BrowserRouter>
-                    );
-                };
+  return (
+    <BrowserRouter>
+      <div className="app-wrapper">
+        <Header />
+        <Nav />
+        <div className="app-wrapper-content">
+          <Route
+            path="/Dialogs"
+            render={() => <Dialogs 
+            state={props.state.dialogsPage}/>}
+          />
+          <Route
+            path="/Profile"
+            render={() => <Profile 
+                profilePage={props.state.profilePage}
+                addPost={props.addPost}
+                updateNewPostText={props.updateNewPostText} />}
+          />
+          <Route path="/News" render={() => <News />} />{" "}
+          <Route path="/Music" render={() => <Music />} />{" "}
+          <Route path="/Settings" render={() => <Settings />} />{" "}
+        </div>{" "}
+      </div>{" "}
+    </BrowserRouter>
+  );
+};
 
-                export default App;
+export default App;

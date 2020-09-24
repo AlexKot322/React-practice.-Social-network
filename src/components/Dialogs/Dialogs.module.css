@@ -15,9 +15,8 @@
 
 .messages {
     max-width: 250px;
-    background-color: transparent;
+    background-color: #F7F8FA;
     border: 0.5px solid rgba(0, 0, 0, 0.3);
-    ;
 }
 
 .head {
@@ -30,17 +29,25 @@
 .footer {
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
+    background-color: #fff;
 }
-.footer textarea {
+.textArea {
+    outline: none;
+    height: 4em;
     width: 100%;
-    resize: none;
 }
+
 .btn {
     background-color: transparent;
-    border-radius: 0.3em;
-    border: 1px solid #000;
+    border: transparent;
     outline: none;
-    max-width: 50px;
+    max-width: 80px;
     box-sizing: border-box;
-    margin: 1em 0 0.4em 0;
+    margin: 0.1em 0 0.1em 0;
+    padding: 10px;
+    cursor: pointer;
+}
+.btn img {
+    width: 16px;
 }
