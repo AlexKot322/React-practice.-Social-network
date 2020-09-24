@@ -27,8 +27,20 @@
     box-shadow: 1px 7px 3px -3px rgba(34, 60, 80, 0.2);
     width: 100%;
 }
-
+.footer {
+    display: flex;
+    flex-direction: column;
+}
 .footer textarea {
     width: 100%;
     resize: none;
+}
+.btn {
+    background-color: transparent;
+    border-radius: 0.3em;
+    border: 1px solid #000;
+    outline: none;
+    max-width: 50px;
+    box-sizing: border-box;
+    margin: 1em 0 0.4em 0;
 }

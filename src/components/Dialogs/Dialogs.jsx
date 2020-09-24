@@ -23,7 +23,7 @@ const Dialogs = (props) => {
                 {messagesElements}
                 <div className={s.footer}>
                     <textarea value="напишите сообщение"></textarea>
-                    <button></button>
+                    <button className={s.btn}>Отправить</button>
                 </div>
             </div>
         </div>
