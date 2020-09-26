@@ -2,22 +2,23 @@ import React from "react";
 import s from './Dialogs.module.css'
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
+import { sendMessageCreator, updateNewMessageBodyCreator } from "../../redux/state";
 
 
 const Dialogs = (props) => {
-    let newMessage = React.createRef();
 
-    let addMessage = () => {
-        let text = newMessage.current.value;
-        alert(text)
+    let state = props.store.getState().dialogsPage;
+
+    let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name} id={d.id} />);
+    let messagesElements = state.messages.map(m => <Message message={m.message} id={m.id} />);
+    let newMessageBody = state.newMessageBody;
+    let onSendMessageClick = () => {
+        props.store.dispatch(sendMessageCreator());
     }
-
-
-
-    let dialogsElements = props.state.dialogs.map(d => <DialogItem name={d.name} id={d.id} />);
-    let messagesElements = props.state.messages.map(m => <Message message={m.message} id={m.id} />);
-    let newDialogElement = React.createRef();
-
+    let onNewMessageChange = (e) => {
+        let body = e.target.value;
+        props.store.dispatch(updateNewMessageBodyCreator(body));
+    }
     
     return (
         <div className={s.dialogs}>
@@ -27,10 +28,14 @@ const Dialogs = (props) => {
             </div>
             <div className={s.messages}>
                 <div className={s.head}></div>
-                {messagesElements}
+                <div>{messagesElements}</div>
                 <div className={s.footer}>
-                    <input ref={newDialogElement} className={s.textArea} placeholder="напишите свое сообщение..."/>
-                    <button  className={s.btn}>
+                    <input 
+                    value={newMessageBody}
+                    className={s.textArea}
+                    onChange={onNewMessageChange} 
+                    placeholder="напишите свое сообщение..."/>
+                    <button  className={s.btn} onClick={onSendMessageClick}>
                         <img src="https://icon-icons.com/icons2/510/PNG/32/android-send_icon-icons.com_50500.png"></img>
                     </button>
                 </div>
