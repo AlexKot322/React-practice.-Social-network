@@ -23,7 +23,7 @@ let initialState = {
     
 const profileReducer = (state = initialState, action) => {
     switch(action.type) {
-        case ADD_POST: 
+        case ADD_POST: {
         let newPost = {
             id: 5,
             name: state.newPostText,
@@ -31,13 +31,19 @@ const profileReducer = (state = initialState, action) => {
             countLook: 0,
             datePublick: "13 августа",
         };
-        state.posts.push(newPost);
-        state.newPostText = " ";
-        return state;
-        case ADD_NEW_POST_TEXT:
-            state.newPostText = action.newText;
-            return state;
-        default:
+          return {
+          ...state,
+          posts: [...state.posts, newPost],
+          newPostText:" "
+        }
+      }
+        case ADD_NEW_POST_TEXT: {
+            return {
+              ...state,
+              newPostText: action.newText
+            };
+        }
+          default:
             return state;
     }
     
