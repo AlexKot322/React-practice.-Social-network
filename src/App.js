@@ -9,6 +9,7 @@ import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import { Route, BrowserRouter } from "react-router-dom";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import UsersContainer from "./components/Users/UsersContainer";
 
 let SomeComponent = () => <Dialogs />;
 
@@ -26,6 +27,11 @@ const App = (props) => {
           <Route
             path="/Profile"
             render={() => <Profile />}
+          />
+          
+          <Route
+            path="/Users"
+            render={() => <UsersContainer/>}
           />
           <Route path="/News" render={() => <News />} />{" "}
           <Route path="/Music" render={() => <Music />} />{" "}

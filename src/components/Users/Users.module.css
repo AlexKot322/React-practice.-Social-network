@@ -1,0 +1,9 @@
+.content {
+    grid-area: c;
+    background-color: fuchsia;
+}
+.userPhoto {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+}
