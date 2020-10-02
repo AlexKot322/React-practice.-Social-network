@@ -7,3 +7,9 @@
     height: 128px;
     border-radius: 50%;
 }
+.selectedPage {
+    font-weight: bold;
+}
+.pagesNumber {
+    cursor: pointer;
+}
