@@ -1,3 +1,14 @@
 .descriptionBlock {
     padding: 10px;
+    display: flex;
+}
+.contacts {
+    display: flex;
+}
+.contacts div {
+    margin-right: 10px;
+}
+
+.info {
+    margin-top: 3em;
 }
