@@ -15,36 +15,32 @@ let Users = (props) => {
   return (
     <div>
       <div className={s.pagesNumber}>
-        {pages.map((p) => {
-          return (
-            <span
+        {pages.map(p => {
+          return <span
               className={props.currentPage === p && s.selectedPage}
               onClick={(e) => {
                 props.onPageChanged(p);
-              }}
-            >
-              {p}
-            </span>
-          );
+              }}>{p}</span>
         })}
       </div>
-      {props.users.map((u) => (
-        <div key={u.id}>
+      {props.users.map(u => <div key={u.id}>
           <span>
+            <div>
             <NavLink to={"/profile/" + u.id}>
               <img
                 src={u.photos.small != null ? u.photos.small : userPhoto}
                 className={s.userPhoto}
               />
             </NavLink>
+            </div>
             <div>
-              {u.followed 
+              {u.followed
               ? <button onClick={() => {
                     axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`,
                         {
                           withCredentials: true,
                           headers: {
-                              "API-KEY": "22d5989a-9c65-4888-aab9-46d0f8202f3d"
+                              "API-KEY": "00b6c05c-5fb6-479c-9311-20e433e64c71"
                           }
                         }) 
                       .then(response => {
@@ -54,12 +50,10 @@ let Users = (props) => {
                       });
                   }}>unfollow</button> 
                   : <button onClick={() => {
-                    axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}}`,
-                        {},
-                        {
+                    axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
                           withCredentials: true,
                           headers: {
-                            "API-KEY": "22d5989a-9c65-4888-aab9-46d0f8202f3d"
+                            "API-KEY": "00b6c05c-5fb6-479c-9311-20e433e64c71"
                         }
                     })
                       .then(response => {
@@ -82,7 +76,7 @@ let Users = (props) => {
             </span>
           </span>
         </div>
-      ))}
+      )}
     </div>
   );
 };
