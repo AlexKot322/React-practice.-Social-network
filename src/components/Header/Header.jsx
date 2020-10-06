@@ -1,7 +1,9 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
+import { setUserProfile } from "../../redux/ProfileReducer";
 import header from './header.module.css'
 
-const Header = () => {
+const Header = (props) => {
     return (
         <header className={header.header}>
             <h1>My-social</h1>
@@ -35,6 +37,11 @@ const Header = () => {
                     <li><a href='#'>Связаться с администрацией</a></li>
                     </div>
                 </ul>
+            </div>
+            <div className={header.loginBlock}>
+                {props.isAuth ? props.login 
+                : <NavLink to={'/login'}>Login</NavLink> }
+                
             </div>
         </header>
     )
