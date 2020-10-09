@@ -1,15 +1,17 @@
 import React from "react";
 import Preloader from "../../common/preloader/preloader";
 import s from "./ProfileInfo.module.css";
+import ProfileStatus from "./ProfileStatus"
+
 const ProfileInfo = (props) => {
   if (!props.profile) {
     return <Preloader />;
   }
   return (
     <div>
-      <div>
+      {/* <div>
         <img src="https://avatars.mds.yandex.net/get-pdb/1524429/7e94cc35-e3fc-42b8-ba0d-212fb120e22d/s1200?webp=false" />
-      </div>
+      </div> */}
       <div className={s.descriptionBlock}>
         <div className={s.avatarAbout}>
           <figure>
@@ -18,6 +20,7 @@ const ProfileInfo = (props) => {
           </figure>
         </div>
         <div className={s.right}>
+          <ProfileStatus status={"Hello urodi"}/>
           <div className={s.contacts}>
             <div>{props.profile.contacts.facebook}</div>
             <div>{props.profile.contacts.website}</div>
