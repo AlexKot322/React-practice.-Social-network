@@ -96,9 +96,7 @@ export const getUsers = (currentPage, pageSize) => {
         dispatch(setTotalUsersCount(data.totalCount));
       });
   };
-};
-
-
+}; //это thunk
 export const follow = (userId) => {
   return (dispatch) => {
     dispatch(toggleFollowingProgress(true, userId));
@@ -109,8 +107,7 @@ export const follow = (userId) => {
                         }
                         dispatch(toggleFollowingProgress(false, userId));
                       });
-                  }}
-
+                  }} //это thunk
 export const unfollow = (userId) => {
 return (dispatch) => {
     dispatch(toggleFollowingProgress(true, userId));
@@ -121,5 +118,5 @@ return (dispatch) => {
                         }
                         dispatch(toggleFollowingProgress(false, userId));
                       });
-                  }}
+                  }} //это thunk
 export default usersReducer;
