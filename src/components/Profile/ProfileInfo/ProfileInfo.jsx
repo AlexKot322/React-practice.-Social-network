@@ -20,7 +20,7 @@ const ProfileInfo = (props) => {
           </figure>
         </div>
         <div className={s.right}>
-          <ProfileStatus status={"Hello urodi"}/>
+          <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
           <div className={s.contacts}>
             <div>{props.profile.contacts.facebook}</div>
             <div>{props.profile.contacts.website}</div>
