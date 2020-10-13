@@ -2,6 +2,9 @@ import React from "react";
 import s from './Dialogs.module.css'
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
+import { Field, reduxForm } from "redux-form";
+import { Redirect } from "react-router-dom";
+import send from "../../assets/img/send.svg"
 
 
 
@@ -14,15 +17,10 @@ const Dialogs = (props) => {
     let messagesElements = state.messages.map(m => <Message message={m.message} key={m.id} id={m.id} />);
     let newMessageBody = state.newMessageBody;
 
-
-    let onSendMessageClick = () => {
-        props.sendMessage();
+    let addNewMessage = (values) => {
+        props.sendMessage(values.newMessageBody);
     }
-    let onNewMessageChange = (e) => {
-        let body = e.target.value;
-        props.updateNewMessageBody(body);
-    }
-    
+    if (!props.isAuth) return <Redirect to={"/login"}/>
 
     return (
         <div className={s.dialogs}>
@@ -33,18 +31,25 @@ const Dialogs = (props) => {
             <div className={s.messages}>
                 <div className={s.head}></div>
                 <div>{messagesElements}</div>
-                <div className={s.footer}>
-                    <input 
-                    value={newMessageBody}
-                    className={s.textArea}
-                    onChange={onNewMessageChange} 
-                    placeholder="напишите свое сообщение..."/>
-                    <button  className={s.btn} onClick={onSendMessageClick}>
-                        <img src="https://icon-icons.com/icons2/510/PNG/32/android-send_icon-icons.com_50500.png"></img>
-                    </button>
-                </div>
+                <AddMessageFormRedux onSubmit={addNewMessage}/>
             </div>
         </div>
     )
 }
+
+
+const AddMessageForm = (props) => {
+    return (
+        <form onSubmit={props.handleSubmit}>
+        <div className={s.footer}>
+            <Field component="textarea" name="newMessageBody" placeholder="Введите сообщение" className={s.textArea}/>
+            <div>
+            <button  className={s.btn}><img src={send}/></button>
+            </div>
+        </div>
+        </form>
+    )
+}
+
+const AddMessageFormRedux = reduxForm ({form: "dialogAddMessageForm"}) (AddMessageForm)
 export default Dialogs;

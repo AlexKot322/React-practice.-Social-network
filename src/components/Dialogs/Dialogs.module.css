@@ -36,6 +36,7 @@
     outline: none;
     height: 4em;
     width: 100%;
+    resize: none;
 }
 
 .btn {
