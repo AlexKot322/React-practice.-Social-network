@@ -5,6 +5,8 @@ import Message from "./Message/Message";
 import { Field, reduxForm } from "redux-form";
 import { Redirect } from "react-router-dom";
 import send from "../../assets/img/send.svg"
+import { Textarea } from "../common/preloader/FormControls/FormControls";
+import { maxLengthCreator, require } from "../../utils/validators/validators";
 
 
 
@@ -37,12 +39,12 @@ const Dialogs = (props) => {
     )
 }
 
-
+let maxLength100 = maxLengthCreator(100);
 const AddMessageForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
         <div className={s.footer}>
-            <Field component="textarea" name="newMessageBody" placeholder="Введите сообщение" className={s.textArea}/>
+            <Field component={Textarea} validate={[require, maxLength100]} name="newMessageBody" placeholder="Введите сообщение" className={s.textArea}/>
             <div>
             <button  className={s.btn}><img src={send}/></button>
             </div>
