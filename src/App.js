@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
 import Nav from "./components/Nav/Nav";
 import Dialogs from "./components/Dialogs/Dialogs";
@@ -11,12 +11,23 @@ import UsersContainer from "./components/Users/UsersContainer";
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import LoginPage from "./components/Login/Login";
+import { connect } from "react-redux";
+import { initializeApp } from "./redux/AppReducer";
+import Preloader from "./components/common/preloader/preloader";
 
 let SomeComponent = () => <Dialogs />;
 
-const App = (props) => {
-  return (
-    <BrowserRouter>
+class App extends Component {
+  componentDidMount() {
+    this.props.initializeApp();
+  }
+  render() {
+    if (!this.props.initialized) {
+    return <Preloader />
+  }
+
+
+  return ( <BrowserRouter>
       <div className="app-wrapper">
         <HeaderContainer />
         <Nav />
@@ -45,6 +56,11 @@ const App = (props) => {
       </div>{" "}
     </BrowserRouter>
   );
-};
+  };
+}; 
 
-export default App;
+const mapStateToProps = (state) => ({
+  initialized: state.app.initialized
+})
+
+export default connect(mapStateToProps, { initializeApp })(App);

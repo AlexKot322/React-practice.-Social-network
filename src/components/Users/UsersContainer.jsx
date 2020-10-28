@@ -60,6 +60,6 @@ export default compose(
     follow, unfollow,
      setCurrentPage,
      toggleFollowingProgress, getUsers
-  }),
-  withAuthRedirect
+  })
+  // withAuthRedirect
 ) (UsersContainer)
